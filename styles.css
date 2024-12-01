@@ -1,0 +1,180 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('imagenes/fondo_navidad.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.calendar {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.gifts {
+    margin-top: 30px;
+}
+
+.gift {
+    background-image: url(imagenes/regalo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 80px;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block;
+    margin: 10px 20px;
+    transition: transform 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.1);
+}
+
+.day {
+    background-image: url(imagenes/gettyimages-827659380-612x612.jpg);
+    background-size: cover;
+    padding: 50px 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.day-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+.day:hover {
+    background-color: #d9534f;
+    transform: scale(1.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+p {
+    color: black;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .days {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .days {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gift {
+        padding: 60px;
+        font-size: 18px;
+    }
+
+    .day {
+        padding: 40px 80px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .days {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gift {
+        padding: 40px;
+        font-size: 16px;
+        margin: 5px 10px;
+    }
+
+    .day {
+        padding: 30px 60px;
+        font-size: 16px;
+    }
+
+    .day-number {
+        font-size: 0.8em;
+        padding: 3px 7px;
+    }
+}

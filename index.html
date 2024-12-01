@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Adviento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar">
+        <h1>Calendario de Adviento de Navidad</h1>
+        <div class="days">
+            <!-- Generar días del 1 al 24 -->
+            <script>
+                for (let i = 1; i <= 24; i++) {
+                    document.write(`<div class="day" id="day${i}"><span class="day-number">${i}</span></div>`);
+                }
+            </script>
+        </div>
+        <div class="gifts">
+            <h2>Regalos</h2>
+            <div class="gift" id="gift1"></div>
+            <div class="gift" id="gift2"></div>
+            <div class="gift" id="gift3"></div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="message"></p>
+            <img id="image" src="" alt="Imagen navideña">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
