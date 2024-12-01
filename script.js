@@ -1,3 +1,27 @@
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+const currentDay = currentDate.getDate();
+
+const allowedDays = [];
+const allowedGifts = [];
+
+for (let i = 1; i <= 24; i++) {
+    if (currentYear === 2024 && currentMonth === 11 && currentDay >= i) { // Month is 0-indexed, December is 11
+        allowedDays.push(i);
+    }
+}
+
+if (currentYear === 2024 && currentMonth === 11 && currentDay >= 10) {
+    allowedGifts.push(1);
+}
+if (currentYear === 2024 && currentMonth === 11 && currentDay >= 20) {
+    allowedGifts.push(2);
+}
+if (currentYear === 2024 && currentMonth === 11 && currentDay >= 24) {
+    allowedGifts.push(3);
+}
+
 const messages = [
     "Te quiero mi wey porque aunque seas intolerante a la lactosa no me iba a saltar tu Calendario de Adviento como todos los años",
     "Te quiero por como me tratas, como si fuera de tu familia",
@@ -65,19 +89,29 @@ const giftImages = [
 ];
 
 document.querySelectorAll('.day').forEach((day, index) => {
-    day.addEventListener('click', () => {
-        document.getElementById('message').textContent = messages[index];
-        document.getElementById('image').src = images[index];
-        document.getElementById('modal').style.display = "block";
-    });
+    if (allowedDays.includes(index + 1)) {
+        day.addEventListener('click', () => {
+            document.getElementById('message').textContent = messages[index];
+            document.getElementById('image').src = images[index];
+            document.getElementById('modal').style.display = "block";
+        });
+    } else {
+        day.style.cursor = "not-allowed";
+        day.style.opacity = "0.5";
+    }
 });
 
 document.querySelectorAll('.gift').forEach((gift, index) => {
-    gift.addEventListener('click', () => {
-        document.getElementById('message').textContent = giftMessages[index];
-        document.getElementById('image').src = giftImages[index];
-        document.getElementById('modal').style.display = "block";
-    });
+    if (allowedGifts.includes(index + 1)) {
+        gift.addEventListener('click', () => {
+            document.getElementById('message').textContent = giftMessages[index];
+            document.getElementById('image').src = giftImages[index];
+            document.getElementById('modal').style.display = "block";
+        });
+    } else {
+        gift.style.cursor = "not-allowed";
+        gift.style.opacity = "0.5";
+    }
 });
 
 document.querySelector('.close').addEventListener('click', () => {
