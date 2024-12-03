@@ -39,7 +39,7 @@ const messages = [
     "Te quiero porque eres mi conductora favorita",
     "Te quiero por lo buena que eres con la gente",
     "Te quiero por como me presumes con tus amigos",
-    "Te quiero porque vas a ser mi TES, PAS, enfermera y médica favorita",
+    "Te quiero porque vas a ser mi TES, PAS, TSIDMN y enfermera favorita",
     "Te quiero por la ilusión que te hace venir a mi graduación",
     "Te quiero porque siempre me tienes presente en tu cuarto, en tu casa, hay fotos mías contigo",
     "Te quiero porque aunque a veces tengamos nuestros altibajos siempre salimos adelante. Este día te permite abrir el regalo 2",
