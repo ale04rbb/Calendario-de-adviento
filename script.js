@@ -96,7 +96,7 @@ const giftVideos = [
     null,
     null,
     null,
-    "videos/tarta-cumpleanos.mp4" // Ruta del video para el regalo oculto
+    "videos/videocumple.mp4" // Ruta del video para el regalo oculto
 ];
 
 document.querySelectorAll('.day').forEach((day, index) => {
