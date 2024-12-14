@@ -21,6 +21,9 @@ if (currentYear === 2024 && currentMonth === 11 && currentDay >= 20) {
 if (currentYear === 2024 && currentMonth === 11 && currentDay >= 24) {
     allowedGifts.push(3);
 }
+if (currentYear === 2024 && currentMonth === 11 && currentDay >= 14) {
+    allowedGifts.push(4);
+}
 
 const messages = [
     "Te quiero mi wey porque aunque seas intolerante a la lactosa no me iba a saltar tu Calendario de Adviento como todos los años",
@@ -36,7 +39,7 @@ const messages = [
     "Te quiero por las veces que la cago, tú entiendes que soy tonto y me perdonas",
     "Te quiero por todas las veces que me ayudas a estudiar",
     "Te quiero por esas veces que me enseñas pasitos nuevos que has aprendido en el baile",
-    "Te quiero porque eres mi conductora favorita",
+    "Te quiero porque me encanta preparar tus cumpleaños solo por la sonrisa que te veo. Alaaaaa, se ha desbloqueado el regalo de la tarta",
     "Te quiero por lo buena que eres con la gente",
     "Te quiero por como me presumes con tus amigos",
     "Te quiero porque vas a ser mi TES, PAS, enfermera y médica favorita",
@@ -63,7 +66,7 @@ const images = [
     "imagenes/abrazo.jpg",
     "imagenes/estudiar.avif",
     "imagenes/bailar.jpg",
-    "imagenes/conductora.webp",
+    "imagenes/felizcumple.jpg",
     "imagenes/empatia.jpg",
     "imagenes/amigos.jpg",
     "imagenes/enfermera.webp",
@@ -79,7 +82,8 @@ const images = [
 const giftMessages = [
     "Enhorabuena!!!, has llegado al día 10, este regalo vale para irnos un día al centro y que te invite a unos buñuelos",
     "Por fin!!!, día 20, este regalo vale por que te lleve a comer unos Manolitos Bakes",
-    "Hemos llegado a nochebuena y seguimos juntos?????!!!!! Voy a llorar otra navidad junto a ti mi amor🥹🥹🥹🥹🥹, este regalo vale por la flor que me pidas un día aleatorio"
+    "Hemos llegado a nochebuena y seguimos juntos?????!!!!! Voy a llorar otra navidad junto a ti mi amor🥹🥹🥹🥹🥹, este regalo vale por la flor que me pidas un día aleatorio",
+    "¡Feliz cumpleaños mi amor! Este regalo vale por un super video juntos."
 ];
 
 const giftImages = [
@@ -88,11 +92,20 @@ const giftImages = [
     "imagenes/regalo3.jpg"
 ];
 
+const giftVideos = [
+    null,
+    null,
+    null,
+    "videos/tarta-cumpleanos.mp4" // Ruta del video para el regalo oculto
+];
+
 document.querySelectorAll('.day').forEach((day, index) => {
     if (allowedDays.includes(index + 1)) {
         day.addEventListener('click', () => {
             document.getElementById('message').textContent = messages[index];
             document.getElementById('image').src = images[index];
+            document.getElementById('image').style.display = "block";
+            document.getElementById('video').style.display = "none";
             document.getElementById('modal').style.display = "block";
         });
     } else {
@@ -105,7 +118,16 @@ document.querySelectorAll('.gift').forEach((gift, index) => {
     if (allowedGifts.includes(index + 1)) {
         gift.addEventListener('click', () => {
             document.getElementById('message').textContent = giftMessages[index];
-            document.getElementById('image').src = giftImages[index];
+            if (giftVideos[index]) {
+                document.getElementById('videoSource').src = giftVideos[index];
+                document.getElementById('video').load();
+                document.getElementById('video').style.display = "block";
+                document.getElementById('image').style.display = "none";
+            } else {
+                document.getElementById('image').src = giftImages[index];
+                document.getElementById('image').style.display = "block";
+                document.getElementById('video').style.display = "none";
+            }
             document.getElementById('modal').style.display = "block";
         });
     } else {

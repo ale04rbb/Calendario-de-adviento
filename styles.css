@@ -91,6 +91,10 @@ h1 {
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     margin: 15% auto;
     padding: 20px;
@@ -99,13 +103,17 @@ h1 {
     max-width: 500px;
     text-align: center;
     border-radius: 10px;
+    position: relative;
 }
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -177,4 +185,98 @@ p {
         font-size: 0.8em;
         padding: 3px 7px;
     }
+}
+
+/* ... el resto del CSS ... */
+
+.gift#gift4 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: url(imagenes/tarta-cumpleaños.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.gift#gift4:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .days {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gift {
+        padding: 40px;
+        font-size: 16px;
+        margin: 5px 10px;
+    }
+
+    .day {
+        padding: 30px 60px;
+        font-size: 16px;
+    }
+
+    .day-number {
+        font-size: 0.8em;
+        padding: 3px 7px;
+    }
+
+    .gift#gift4 {
+        padding: 50px; /* Ajusta el tamaño del padding para que sea más pequeño en dispositivos pequeños */
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .days {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gift {
+        padding: 40px;
+        font-size: 16px;
+        margin: 5px 10px;
+    }
+
+    .day {
+        padding: 30px 60px;
+        font-size: 16px;
+    }
+
+    .day-number {
+        font-size: 0.8em;
+        padding: 3px 7px;
+    }
+
+    .gift#gift4 {
+        padding: 50px; /* Ajusta el tamaño del padding para que sea más pequeño en dispositivos pequeños */
+    }
+}
+
+/* ... el resto del CSS ... */
+
+video {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
 }
